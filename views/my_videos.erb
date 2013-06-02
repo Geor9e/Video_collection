@@ -1,11 +1,12 @@
 <% @rows.each do |row| %>
- <div class="well span5">
-      Title: <%= row['title'] %><br>
-      Descrition: <%= row['description'] %><br>
-      Url: <%= row['url'] %><br>
-      Genre: <%= row['genre'] %><br><br>
-  <a class="btn btn-success" href="#">Watch <i class="icon-play"></i></a>
-  <button class="btn btn-warning" type="submit">Edit</button>
-  <button class="btn btn-danger" type="submit">Delete</button>
- </div>
+  <div class="well span3">
+        <input type="text" name="title" value='<%= row['title'] %>' placeholder='<%= row['title'] %>'><br>
+        <input type="text" name="title" value='<%= row['description'] %>' placeholder='<%= row['description'] %>'><br>
+        <input type="text" name="title" value='<%= row['url'] %>' placeholder='<%= row['url'] %>'><br>
+        <input type="text" name="title" value='<%= row['genre'] %>' placeholder='<%= row['genre'] %>'><br>
+        <a class="btn btn-success" href="#">Watch <i class="icon-play"></i></a>
+        <button class="btn btn-warning" type="submit">Edit</button>
+        <button class="btn btn-danger" type="submit">Delete</button>
+  </div>
 <% end %>
+
