@@ -1,0 +1,11 @@
+<% @rows.each do |row| %>
+ <div class="well span5">
+      Title: <%= row['title'] %><br>
+      Descrition: <%= row['description'] %><br>
+      Url: <%= row['url'] %><br>
+      Genre: <%= row['genre'] %><br><br>
+  <a class="btn btn-success" href="#">Watch <i class="icon-play"></i></a>
+  <button class="btn btn-warning" type="submit">Edit</button>
+  <button class="btn btn-danger" type="submit">Delete</button>
+ </div>
+<% end %>
