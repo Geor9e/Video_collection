@@ -17,12 +17,16 @@ get '/' do
 end
 
 
-get '/new' do
-    erb :new
+get '/my_videos' do
+    sql = 'select * from videos'
+    @rows = run_sql(sql)
+    erb :my_videos
 end
 
 
 post '/create' do
-
+    sql = "insert into videos (title,description,url,genre) values ('#{params['title']}','#{params['description']}','#{params['url']}','#{params['genre']}')"
+    run_sql(sql)
+    redirect '/'
 end
 
