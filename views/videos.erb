@@ -1,7 +1,7 @@
 <% @rows.each do |row| %>
     <div class="well span6">
         Title: <%= row['title'] %><br>
-        Descrpition: <%= row['description'] %><br>
+        Description: <%= row['description'] %><br>
         Url: <%= row['url'] %><br>
         Genre: <%= row['genre'] %><br><br>
         <iframe width="455" height="315" src="http://www.youtube.com/embed/<%= row['url'].split("=").last %>" frameborder="3"></iframe>
