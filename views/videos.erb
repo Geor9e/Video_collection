@@ -1,0 +1,11 @@
+<% @rows.each do |row| %>
+    <div class="well span6">
+        Title: <%= row['title'] %><br>
+        Descrition: <%= row['description'] %><br>
+        Url: <%= row['url'] %><br>
+        Genre: <%= row['genre'] %><br><br>
+        <iframe width="455" height="315" src="http://www.youtube.com/embed/<%= row['url'].split("=").last %>" frameborder="3"></iframe>
+        <a class="btn btn-warning" href="/videos/<% row['id'] %>/edit">Edit</a>
+        <!--<button class="btn btn-danger" type="submit">Delete</button>-->
+  </div>
+<% end %>
