@@ -10,8 +10,8 @@
   <title> Video Store</title>
 </head>
 <body>
-<div class="navbar navbar-inner">
-  <div class="container">
+<div class="containerr">
+  <div class="navbar navbar-inner">
       <div class="brand" href="http://localhost:4567/">You2ube</div>
       <ul class="nav">
         <li><a href="http://localhost:4567/">Home</a></li>
@@ -23,16 +23,16 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <% @genre.each do |genre| %>
-              <li><a href="/videos/genre/"<%= genre['genre'] %>"> <%= genre['genre'] %></a></li>
+              <li><a href="/videos/<%= genre['genre'] %>"> <%= genre['genre'] %></a></li>
             <%end%>
           </ul>
         </li>
       </ul>
   </div>
 </div>
+<%= yield %>
 </body>
 </html>
-<%= yield %>
 
 
 
