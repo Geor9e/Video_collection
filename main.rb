@@ -12,21 +12,41 @@ def run_sql(sql)
   results
 end
 
-get '/' do
-   erb :home
-end
+get('/') {
+  sql = "select * from videos"
+  @rows = run_sql(sql)
+  erb :home
+}
 
 
-get '/my_videos' do
-    sql = 'select * from videos'
-    @rows = run_sql(sql)
-    erb :my_videos
-end
+get('/videos') {
+  sql = 'select * from videos'
+  @rows = run_sql(sql)
+  erb :videos
+}
 
 
-post '/create' do
-    sql = "insert into videos (title,description,url,genre) values ('#{params['title']}','#{params['description']}','#{params['url']}','#{params['genre']}')"
-    run_sql(sql)
-    redirect '/'
-end
+post('/create') {
+  sql = "insert into videos (title,description,url,genre)
+           values ('#{params['title']}','#{params['description']}','#{params['url']}','#{params['genre']}')"
+  run_sql(sql)
+  redirect '/videos'
+}
+
+
+post('/videos/:id') {
+  sql ="update videos set title='#{params['title']}', description='#{params['description']}', url='#{params['url']}',
+        genre='#{params['genre']}' WHERE id=#{params['id']}"
+  run_sql(sql)
+  redirect to('/videos')
+}
+
+
+get('/videos/:id/edit') {
+  sql = "update videos set title='#{params['title']}', description='#{params['description']}',
+         url='#{params['url']}', genre='#{params['genre'].downcase}'
+         where id = #{params['id']}"
+  run_sql sql
+  redirect to('/videos')
+}
 

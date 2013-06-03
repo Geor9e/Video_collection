@@ -5,20 +5,31 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
   <script src='/js/jquery-2.0.2.min.js'></script>
   <script src='/bootstrap/js/bootstrap.js'></script>
+  <script src="twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+  <script src="twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>
   <title> Video Store</title>
 </head>
 <body>
-      <div class="navbar">
-        <div class="container">
-          <div class="navbar-inner">
-            <div class="brand" href="http://localhost:4567/">You2ube</div>
-            <ul class="nav">
-              <li><a href="http://localhost:4567/">Home</a></li>
-              <li><a href="http://localhost:4567/my_videos">Your Videos</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class="navbar navbar-inner">
+  <div class="container">
+      <div class="brand" href="http://localhost:4567/">You2ube</div>
+      <ul class="nav">
+        <li><a href="http://localhost:4567/">Home</a></li>
+        <li><a href="http://localhost:4567/my_videos">Your Videos</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Genre
+           <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+          </ul>
+        </li>
+      </ul>
+  </div>
+</div>
 </body>
 </html>
 <%= yield %>
+
+
+
